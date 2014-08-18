@@ -28,6 +28,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Feed" id="oEk-rG-qAV"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="N2Y-Qn-ojL">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshFeed" destination="Pie-sF-ZKG" eventType="valueChanged" id="Hh1-Xb-Pqs"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oap-pi-bBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,6 +103,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tweets" id="nno-WX-F9m"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="KHm-iF-YCx">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshTweets" destination="u0k-AY-CFA" eventType="valueChanged" id="UFd-CZ-YRg"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGE-r4-4dZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
