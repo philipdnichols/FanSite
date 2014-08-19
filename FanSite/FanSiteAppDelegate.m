@@ -7,12 +7,17 @@
 //
 
 #import "FanSiteAppDelegate.h"
+#import "AFNetworkActivityIndicatorManager.h"
+#import "AFNetworkActivityLogger.h"
 
 @implementation FanSiteAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    
     return YES;
 }
 							

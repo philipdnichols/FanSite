@@ -6,6 +6,12 @@
 // project.
 
 
+// AFNetworkActivityLogger
+#define COCOAPODS_POD_AVAILABLE_AFNetworkActivityLogger
+#define COCOAPODS_VERSION_MAJOR_AFNetworkActivityLogger 2
+#define COCOAPODS_VERSION_MINOR_AFNetworkActivityLogger 0
+#define COCOAPODS_VERSION_PATCH_AFNetworkActivityLogger 3
+
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 2
@@ -47,4 +53,16 @@
 #define COCOAPODS_VERSION_MAJOR_AFNetworking_UIKit 2
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
+
+// Mantle
+#define COCOAPODS_POD_AVAILABLE_Mantle
+#define COCOAPODS_VERSION_MAJOR_Mantle 1
+#define COCOAPODS_VERSION_MINOR_Mantle 5
+#define COCOAPODS_VERSION_PATCH_Mantle 0
+
+// Mantle/extobjc
+#define COCOAPODS_POD_AVAILABLE_Mantle_extobjc
+#define COCOAPODS_VERSION_MAJOR_Mantle_extobjc 1
+#define COCOAPODS_VERSION_MINOR_Mantle_extobjc 5
+#define COCOAPODS_VERSION_PATCH_Mantle_extobjc 0
 

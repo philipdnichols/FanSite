@@ -23,6 +23,11 @@
 		B17E7A7619A26B0000066AB4 /* FanSiteFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17E7A7519A26B0000066AB4 /* FanSiteFeedTableViewController.m */; };
 		B17E7A7919A26B2500066AB4 /* FanSiteTweetsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17E7A7819A26B2500066AB4 /* FanSiteTweetsTableViewController.m */; };
 		B17E7A7C19A26C0000066AB4 /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B17E7A7B19A26C0000066AB4 /* ArrayDataSource.m */; };
+		B17E7A8119A28F1900066AB4 /* FeedClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B17E7A8019A28F1900066AB4 /* FeedClient.m */; };
+		B17E7A8419A2925000066AB4 /* FeedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B17E7A8319A2925000066AB4 /* FeedManager.m */; };
+		B17E7A8719A2970800066AB4 /* FeedNSXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B17E7A8619A2970800066AB4 /* FeedNSXMLParserDelegate.m */; };
+		B17E7A8C19A2E9CB00066AB4 /* FeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B17E7A8B19A2E9CB00066AB4 /* FeedItem.m */; };
+		B17E7A8F19A2F20600066AB4 /* FanSiteFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17E7A8E19A2F20600066AB4 /* FanSiteFeedDetailViewController.m */; };
 		E44705FC90E145D38439FA96 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A8FBB6C1A5425D943C5D96 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +66,16 @@
 		B17E7A7819A26B2500066AB4 /* FanSiteTweetsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FanSiteTweetsTableViewController.m; sourceTree = "<group>"; };
 		B17E7A7A19A26C0000066AB4 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
 		B17E7A7B19A26C0000066AB4 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
+		B17E7A7F19A28F1900066AB4 /* FeedClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedClient.h; sourceTree = "<group>"; };
+		B17E7A8019A28F1900066AB4 /* FeedClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedClient.m; sourceTree = "<group>"; };
+		B17E7A8219A2925000066AB4 /* FeedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedManager.h; sourceTree = "<group>"; };
+		B17E7A8319A2925000066AB4 /* FeedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedManager.m; sourceTree = "<group>"; };
+		B17E7A8519A2970800066AB4 /* FeedNSXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedNSXMLParserDelegate.h; sourceTree = "<group>"; };
+		B17E7A8619A2970800066AB4 /* FeedNSXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedNSXMLParserDelegate.m; sourceTree = "<group>"; };
+		B17E7A8A19A2E9CB00066AB4 /* FeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItem.h; sourceTree = "<group>"; };
+		B17E7A8B19A2E9CB00066AB4 /* FeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItem.m; sourceTree = "<group>"; };
+		B17E7A8D19A2F20600066AB4 /* FanSiteFeedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanSiteFeedDetailViewController.h; sourceTree = "<group>"; };
+		B17E7A8E19A2F20600066AB4 /* FanSiteFeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FanSiteFeedDetailViewController.m; sourceTree = "<group>"; };
 		C3A8FBB6C1A5425D943C5D96 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +141,7 @@
 			children = (
 				B166956519A267D800CD6EA2 /* FanSiteAppDelegate.h */,
 				B166956619A267D800CD6EA2 /* FanSiteAppDelegate.m */,
+				B17E7A7E19A28ED900066AB4 /* API */,
 				B166958B19A267F500CD6EA2 /* View */,
 				B166958C19A267FC00CD6EA2 /* Controller */,
 				B166956E19A267D800CD6EA2 /* Images.xcassets */,
@@ -175,10 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				B17E7A7D19A26D3D00066AB4 /* Data Sources */,
-				B17E7A7419A26B0000066AB4 /* FanSiteFeedTableViewController.h */,
-				B17E7A7519A26B0000066AB4 /* FanSiteFeedTableViewController.m */,
-				B17E7A7719A26B2500066AB4 /* FanSiteTweetsTableViewController.h */,
-				B17E7A7819A26B2500066AB4 /* FanSiteTweetsTableViewController.m */,
+				B17E7A9019A2F20B00066AB4 /* Feed */,
+				B17E7A9119A2F21800066AB4 /* Tweet */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -190,6 +204,57 @@
 				B17E7A7B19A26C0000066AB4 /* ArrayDataSource.m */,
 			);
 			name = "Data Sources";
+			sourceTree = "<group>";
+		};
+		B17E7A7E19A28ED900066AB4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B17E7A8819A2C1C500066AB4 /* Feed */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		B17E7A8819A2C1C500066AB4 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				B17E7A8919A2E96500066AB4 /* Model */,
+				B17E7A7F19A28F1900066AB4 /* FeedClient.h */,
+				B17E7A8019A28F1900066AB4 /* FeedClient.m */,
+				B17E7A8219A2925000066AB4 /* FeedManager.h */,
+				B17E7A8319A2925000066AB4 /* FeedManager.m */,
+				B17E7A8519A2970800066AB4 /* FeedNSXMLParserDelegate.h */,
+				B17E7A8619A2970800066AB4 /* FeedNSXMLParserDelegate.m */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		B17E7A8919A2E96500066AB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B17E7A8A19A2E9CB00066AB4 /* FeedItem.h */,
+				B17E7A8B19A2E9CB00066AB4 /* FeedItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B17E7A9019A2F20B00066AB4 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				B17E7A7419A26B0000066AB4 /* FanSiteFeedTableViewController.h */,
+				B17E7A7519A26B0000066AB4 /* FanSiteFeedTableViewController.m */,
+				B17E7A8D19A2F20600066AB4 /* FanSiteFeedDetailViewController.h */,
+				B17E7A8E19A2F20600066AB4 /* FanSiteFeedDetailViewController.m */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		B17E7A9119A2F21800066AB4 /* Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				B17E7A7719A26B2500066AB4 /* FanSiteTweetsTableViewController.h */,
+				B17E7A7819A26B2500066AB4 /* FanSiteTweetsTableViewController.m */,
+			);
+			name = Tweet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,11 +390,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17E7A8F19A2F20600066AB4 /* FanSiteFeedDetailViewController.m in Sources */,
 				B17E7A7619A26B0000066AB4 /* FanSiteFeedTableViewController.m in Sources */,
 				B166956319A267D800CD6EA2 /* main.m in Sources */,
 				B17E7A7919A26B2500066AB4 /* FanSiteTweetsTableViewController.m in Sources */,
 				B17E7A7C19A26C0000066AB4 /* ArrayDataSource.m in Sources */,
+				B17E7A8C19A2E9CB00066AB4 /* FeedItem.m in Sources */,
+				B17E7A8419A2925000066AB4 /* FeedManager.m in Sources */,
 				B166956719A267D800CD6EA2 /* FanSiteAppDelegate.m in Sources */,
+				B17E7A8719A2970800066AB4 /* FeedNSXMLParserDelegate.m in Sources */,
+				B17E7A8119A28F1900066AB4 /* FeedClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
