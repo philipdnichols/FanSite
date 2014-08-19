@@ -11,12 +11,14 @@
 #import "FeedManager.h"
 #import "FeedItem.h"
 #import "FanSiteFeedDetailViewController.h"
+#import "FeedItemCell.h"
+#import "FeedItemCell+Configure.h"
 
 @interface FanSiteFeedTableViewController ()
 
 @property (strong, nonatomic) ArrayDataSource *feedArrayDataSource;
 
-@property (strong, nonatomic) NSDateFormatter *feedCellDateFormatter;
+@property (copy, nonatomic) TableViewCellConfigureBlock feedCellConfigureBlock;
 
 @end
 
@@ -32,13 +34,14 @@
     [self.tableView reloadData];
 }
 
-- (NSDateFormatter *)feedCellDateFormatter
+- (TableViewCellConfigureBlock)feedCellConfigureBlock
 {
-    if (!_feedCellDateFormatter) {
-        _feedCellDateFormatter = [[NSDateFormatter alloc] init];
-        _feedCellDateFormatter.dateFormat = @"MMM dd, yyyy hh:mm a";
+    if (!_feedCellConfigureBlock) {
+        _feedCellConfigureBlock = ^(FeedItemCell *feedItemCell, FeedItem *feedItem) {
+            [feedItemCell configureForFeedItem:feedItem];
+        };
     }
-    return _feedCellDateFormatter;
+    return _feedCellConfigureBlock;
 }
 
 #pragma mark - Lifecycle
@@ -47,12 +50,17 @@
 {
     [super viewDidLoad];
     
+    [self setupTableView];
+    
     [self refreshFeed];
 }
 
-#pragma mark - IBActions
+- (void)setupTableView
+{
+    [self.tableView registerNib:[FeedItemCell nib] forCellReuseIdentifier:[FeedItemCell identifier]];
+}
 
-static NSString * const FeedCellIdentifier = @"FeedCell";
+#pragma mark - IBActions
 
 - (IBAction)refreshFeed
 {
@@ -62,17 +70,25 @@ static NSString * const FeedCellIdentifier = @"FeedCell";
         [self.refreshControl endRefreshing];
         
         self.feedArrayDataSource = [[ArrayDataSource alloc] initWithItems:feedItems
-                                                           cellIdentifier:FeedCellIdentifier
-                                                       configureCellBlock:^(UITableViewCell *cell, FeedItem *feedItem) {
-                                                           // TODO: Move this to a property and use a custom cell with a category
-                                                           cell.textLabel.text = feedItem.title;
-                                                           cell.detailTextLabel.text = [self.feedCellDateFormatter stringFromDate:feedItem.date];
-                                                       }];
+                                                           cellIdentifier:[FeedItemCell identifier]
+                                                       configureCellBlock:self.feedCellConfigureBlock];
     } failure:^(NSError *error) {
         [self.refreshControl endRefreshing];
         
+        [TSMessage showNotificationInViewController:self
+                                              title:@"Error"
+                                           subtitle:[error localizedDescription]
+                                               type:TSMessageNotificationTypeError];
+        
         NSLog(@"Error fetching feed: %@", [error localizedDescription]);
     }];
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:FeedDetailSegueIdentifier sender:[tableView cellForRowAtIndexPath:indexPath]];
 }
 
 #pragma mark - Navigation
@@ -98,12 +114,16 @@ static NSString * const FeedDetailSegueIdentifier = @"Feed Detail";
             if (indexPath) {
                 FeedItem *feedItem = [self.feedArrayDataSource itemAtIndexPath:indexPath];
                 
-                FanSiteFeedDetailViewController *fanSiteFeedDetailViewController = (FanSiteFeedDetailViewController *)viewController;
-                fanSiteFeedDetailViewController.feedItemURL = feedItem.link;
-                fanSiteFeedDetailViewController.title = feedItem.title;
+                [self prepareFeedDetailViewController:viewController withFeedItem:feedItem];
             }
         }
     }
+}
+
+- (void)prepareFeedDetailViewController:(FanSiteFeedDetailViewController *)viewController withFeedItem:(FeedItem *)feedItem
+{
+    viewController.feedItemURL = feedItem.link;
+    viewController.title = feedItem.title;
 }
 
 @end

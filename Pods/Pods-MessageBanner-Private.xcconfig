@@ -1,0 +1,5 @@
+#include "Pods-MessageBanner.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/MessageBanner" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworkActivityLogger" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/FXBlurView" "${PODS_ROOT}/Headers/HexColors" "${PODS_ROOT}/Headers/Mantle" "${PODS_ROOT}/Headers/MessageBanner"
+OTHER_LDFLAGS = -ObjC
+PODS_ROOT = ${SRCROOT}

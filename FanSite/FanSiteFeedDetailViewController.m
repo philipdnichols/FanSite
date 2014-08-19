@@ -16,6 +16,8 @@
 
 @implementation FanSiteFeedDetailViewController
 
+#pragma mark - Properties
+
 - (void)setFeedItemURL:(NSURL *)feedItemURL
 {
     _feedItemURL = feedItemURL;
